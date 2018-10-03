@@ -1,0 +1,79 @@
+.group{
+	
+	background-image: url("math.jpg");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-color: #DDDDDD;
+	text-align: center;
+}
+.contentbox	{
+	border: 0px;
+	width: 900px;
+	overflow: auto;
+	text-align:left;
+	background-color: beige;
+	padding: 40px 5px 50px 5px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+h2	{
+	text-align: left;
+	font-size: 16pt;
+	font-family: 'Esteban', Georgia, Times, serif;
+	margin-left: 50px;
+	margin-right: 60px;
+	font-weight: bold;
+}
+p, ul, ol	{
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 12pt;
+	margin-left: 50px;
+	margin-right: 60px;
+}
+
+img {
+	border: none;
+}
+
+.links {
+	color: #000099;
+	text-decoration: none;
+}
+
+a {
+	color: #000099;
+	text-decoration: none;
+}
+.name {
+	font-size: 36pt;
+	letter-spacing:2px;
+	font-family: 'Esteban', Georgia, Times, serif;
+}
+
+.aboutname {
+	letter-spacing:2px;
+	font-family: 'Esteban', Georgia, Times, serif;
+}
+
+.photograph	{
+	border: 2px solid black;
+	display: block;
+	margin: 30px auto;
+	border-radius: 0px;
+}
+
+
+.blammo {
+	font-size: 100pt;
+	color: white;
+	background: linear-gradient(blue, DarkOrange);
+}
+
+.current {
+	background-image: url("graph.jpg");
+
+}
+

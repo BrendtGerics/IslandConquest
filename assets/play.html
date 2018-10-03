@@ -1,0 +1,92 @@
+
+<html> 
+        <head> 
+        <title>Play a game</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+        <link href='http://fonts.googleapis.com/css?family=Esteban' rel='stylesheet' type='text/css'>
+        
+        </head > 
+       
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="main.css">
+        
+        
+        
+        <body>
+        <body class="group"> 
+        
+        <p align="center">
+        
+        
+        
+        <div class="contentbox">	
+        
+
+        
+        <h1> Welcome to Island Conquest</h1>
+        
+        
+        <table>
+                <tr>
+                  <th>Person</th>
+                  <th>Character</th>
+                </tr>
+              </table>
+              <br/>
+            
+              <!-- 
+                This section contains the form, that will be used to hit the 
+                `POST /bird` API that we will build in the next section
+               -->
+              <form action="/play" method="post">
+                Species:
+                <input type="text" name="Person">
+                <br/> Description:
+                <input type="text" name="Character">
+                <br/>
+                <input type="submit" value="Submit">
+              </form>
+            
+              <!-- 
+                Finally, the last section is the script that will
+                run on each page load to fetch the list of birds
+                and add them to our existing table
+               -->
+              <script>
+                personTable = document.querySelector("table")
+                /*
+                Use the browsers `fetch` API to make a GET call to /bird
+                We expect the response to be a JSON list of birds, of the
+                form :
+                [
+                  {"species":"...","description":"..."},
+                  {"species":"...","description":"..."}
+                ]
+                */
+                fetch("/play")
+                  .then(response => response.json())
+                  .then(personList => {
+                    //Once we fetch the list, we iterate over it
+                    personList.forEach(person => {
+                      // Create the table row
+                      row = document.createElement("tr")
+                      // Create the table data elements for the species and description columns
+                      name = document.createElement("td")
+                      name.innerHTML = person.Name
+                      description = document.createElement("td")
+                      description.innerHTML = person.description
+                      // Add the data elements to the row
+                      row.appendChild(name)
+                      row.appendChild(description)
+                      // Finally, add the row element to the table itself
+                      personTable.appendChild(row)
+                    })
+                  })
+              </script>
+        </div> 
+        
+        
+        
+        </body>
+        </html>
+        
